@@ -1,0 +1,173 @@
+body {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-top: 80px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 997;
+    top: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #5b85da;
+    text-align: center;
+}
+
+#navbar a {
+    text-decoration: none;
+    position: relative;
+    color: white;
+    margin: 3%;
+}
+
+#navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+#bottone-menu {
+    width: 0px;
+    height: auto;
+}
+
+#menuButton {
+    visibility: hidden;
+    height: 0px;
+}
+
+#menu {
+    visibility: hidden;
+    height: 0px;
+}
+
+#logo_navbar {
+    height: 0px;
+    width: auto;
+    visibility: hidden;
+}
+
+#container-contatti {
+    display: inline-flex;
+}
+
+@media screen and (max-width: 767px) {
+    #navbar {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    #menuButton {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        z-index: 999;
+        visibility: visible;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: fit-content;
+        background-color: #5b85da;
+    }
+
+    #menu {
+        width: 250px;
+        height: min-content;
+        background-color: #5b85da;
+        position: fixed;
+        top: 50px;
+        left: -251px;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+        z-index: 998;
+        visibility: visible;
+    }
+
+    #menu.open {
+        left: 0px;
+    }
+
+    #menuButton.open {
+        background-color: #5b85da;
+    }
+
+    #bottone-menu {
+        height: 30px;
+        width: auto;
+    }
+
+    #logo_navbar {
+        height: 30px;
+        width: auto;
+        visibility: visible;
+    }
+
+    #menuButton:focus,
+    #menuButton:active {
+        outline: none;
+    }
+
+    .ciao{
+        position: fixed;
+    }
+
+    #menu a {
+        text-decoration: none;
+        position: relative;
+        color: white;
+        margin: 3%;
+    }
+    
+    #menu a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #menu a:hover::after {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    #menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #container-contatti {
+        display: inline-block;
+    }
+}
